@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\Admin\CartaController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\Tagcontroller;
@@ -23,3 +23,5 @@ Route::resource('posts', PostController::class)->names('admin.posts');
 Route::resource('tours', TourController::class)->names('admin.tours');
 
 Route::resource('users', UserController::class)->names('admin.users');
+
+Route::resource('cartas', CartaController::class)->names('admin.cartas');
