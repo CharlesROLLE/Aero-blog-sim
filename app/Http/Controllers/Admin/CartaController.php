@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCartaRequest;
+use App\Http\Requests\UpdateCartaRequest;
 use Illuminate\Http\Request;
 use App\Models\Carta;
 use Illuminate\Support\Facades\Gate;
@@ -81,9 +82,13 @@ class CartaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateCartaRequest $request, Carta $carta)
     {
-        //
+        $input = $request->all();
+
+        $carta->update($input);
+
+        return redirect()->route('admin.cartas.index')->with('info', 'El contenidoha sido actualizado con éxito');
     }
 
     /**

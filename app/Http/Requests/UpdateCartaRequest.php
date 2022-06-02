@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Requests;
-
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Gate;
 
-class StoreCartaRequest extends FormRequest
+use Illuminate\Foundation\Http\FormRequest;
+
+class UpdateCartaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,7 +14,7 @@ class StoreCartaRequest extends FormRequest
      */
     public function authorize()
     {
-        return Gate::allows('tour_access');
+        return Gate::allows('carta_access');
     }
 
     /**
