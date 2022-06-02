@@ -109,7 +109,7 @@
 
                             <a class="{{Request::routeIs('admin.posts.*') ? 'activa' : 'text-gray-500'}}"
                                 href="{{ route('admin.posts.index') }}">
-                                <x-bi-postcard-heart  class="h-6 w-6" />
+                                <x-bi-postcard-heart class="h-6 w-6" />
 
 
                                 <span class="mx-3">Posts</span>
@@ -118,7 +118,7 @@
                             <a class="{{Request::routeIs('admin.posts.create') ? 'activa' : 'text-gray-500'}}"
                                 href="{{ route('admin.posts.create') }}">
                                 <x-eos-post-add class="h-6 w-6" />
-                              
+
 
 
                                 <span class="mx-3">Crear Post</span>
@@ -173,7 +173,7 @@
                             @can('tour_access')
                             <a class="{{Request::routeIs('admin.tours.*') ? 'activa' : 'text-gray-500'}}"
                                 href="{{ route('admin.tours.index') }}">
-                                <x-heroicon-o-globe-alt class="h-6 w-6" /> 
+                                <x-heroicon-o-globe-alt class="h-6 w-6" />
 
                                 <span class="mx-3">Rutas</span>
                             </a>
@@ -187,7 +187,23 @@
                                 <span class="mx-3">Crear Ruta</span>
                             </a>
                             @endcan
-                        </nav>
+
+                            <a class="{{Request::routeIs('admin.cartas.*') ? 'activa' : 'text-gray-500'}}"
+                                href="{{ route('admin.cartas.index') }}">
+                                <x-heroicon-o-map class="h-6 w-6" />
+
+                                <span class="mx-3">Cartas & Fp</span>
+                            </a>
+
+                            <a class="{{Request::routeIs('admin.cartas.create') ? 'activa' : 'text-gray-500'}}"
+                                href="{{ route('admin.cartas.create') }}">
+                                <x-heroicon-s-view-grid-add class="h-6 w-6" />
+
+
+                                <span class="mx-3">Agregar Contenido</span>
+                            </a>
+
+                        </nav> 
                     </div>
 
                     <div class="flex-1 flex flex-col overflow-hidden">

@@ -26,15 +26,11 @@
 
 
             <div class="grid grid-cols-2 gap-6 bg-gray-100 border-b border-gray-200 shadow-lg mx-auto px-4 py-4 mb-2 ">
-
-                <div class="grid col-span-2">
-                    <textarea>
-                        testt
-                    </textarea>
-
-                  
-
-                </div>
+                
+                @foreach ($cartas as $carta)
+                    {{ $carta->content }}
+                @endforeach
+               
             </div>
 
 
