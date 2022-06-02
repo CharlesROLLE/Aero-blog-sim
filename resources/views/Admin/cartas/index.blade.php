@@ -1,6 +1,4 @@
 <x-admin-layout>
     
-    @foreach ($cartas as $carta)
-    {{ $carta->content }}
-    @endforeach
+    @livewire('admin.cartas-index')
 </x-admin-layout>
