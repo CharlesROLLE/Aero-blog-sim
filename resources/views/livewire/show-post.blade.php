@@ -20,13 +20,18 @@
                         @endforeach
                     </div>
 
-                    @auth
-                    @if (auth()->user()->id === $post->user->id)
                     <div class="flex">
-                        @livewire('edit-hide-form', ['post' => $post], key($post->id))
+
+                        <div class="font-bold">
+
+                            {{ $post->user->name}}
+                        </div>
+                        <div class="text-gray-400 ml-2 ">
+                            {{ $post->created_at->diffForHumans() }}
+                        </div>
                     </div>
-                    @endif
-                    @endauth
+
+                  
 
 
                 </div>
