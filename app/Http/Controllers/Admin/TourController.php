@@ -70,10 +70,6 @@ class TourController extends Controller
 
         Tour::create($tour);
 
-
-
-
-
         return redirect()->route('admin.tours.index')->with('info', 'El Tour ha sido creado con éxito');
     }
 

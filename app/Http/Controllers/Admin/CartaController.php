@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCartaRequest;
 use Illuminate\Http\Request;
 use App\Models\Carta;
+use Illuminate\Support\Facades\Gate;
+use Symfony\Component\HttpFoundation\Response;
+
 
 class CartaController extends Controller
 {
@@ -27,6 +31,8 @@ class CartaController extends Controller
      */
     public function create()
     {
+        abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         return view('admin.cartas.create');
     }
 
@@ -36,9 +42,13 @@ class CartaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCartaRequest $request)
     {
-        //
+        $carta = $request->all();
+
+        Carta::create($carta);
+
+        return redirect()->route('admin.cartas.index')->with('info', 'El contenido ha sido creado con éxito');
     }
 
     /**
