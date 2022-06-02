@@ -38,7 +38,7 @@
                                     </div>
                                     <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">{{
                                         $tour->icaoDep }}</h2>
-                                    {{ $tour->icaoDepContent }}
+                                    {!! $tour->icaoDepContent !!}
                                 </div>
                                 <div class="sm:w-1/2 mb-10 px-4">
                                     <div class="rounded-lg h-64 overflow-hidden">
@@ -47,7 +47,7 @@
                                     </div>
                                     <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">{{
                                         $tour->icaoDes }}</h2>
-                                    {{ $tour->icaoDesContent }}
+                                    {!! $tour->icaoDesContent !!}
                                 </div>
                             </div>
                             <div>
@@ -66,18 +66,16 @@
 
             </div>
 
-            @if (count($tours))
+          
 
             <table class="min-w-full divide-y divide-gray-200">
             </table>
+            @if (count($tours))
 
-            @if ($tours->hasPages())
 
-            <div class="mt-4">
-                {{ $tours->links() }}
-            </div>
+        
 
-            @endif
+         
             @else
             <div class="px-6 py-4">
                 Ningun registro se ha encontrado

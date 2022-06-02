@@ -136,7 +136,7 @@ class PostController extends Controller
        
 
         if ($image =$request->file('image')) {
-            $destPath = 'posts/';
+            $destPath = 'storage/posts/';
             $profileImage = "post" . date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destPath, $profileImage);
             $input['image'] = $profileImage;

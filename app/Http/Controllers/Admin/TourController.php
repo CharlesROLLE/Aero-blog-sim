@@ -113,7 +113,7 @@ class TourController extends Controller
      */
     public function update(UpdateTourRequest $request, Tour $tour)
     {
-
+        $input = $request->all();
         if ($request->hasFile(key: 'imageDep')) {
 
 
@@ -121,21 +121,24 @@ class TourController extends Controller
                 $destPath = 'storage/tours/';
                 $rutaImage = "dep" . date('YmdHis') . "." . $image->getClientOriginalExtension();
                 $image->move($destPath, $rutaImage);
-                $tour['imageDep'] = $rutaImage;
+                $input['imageDep'] = $rutaImage;
             } else {
-                unset($tour['imageDep']);
+                unset($input['imageDep']);
             }
-      
+            
+        }
+            if ($request->hasFile(key: 'imageDes')) {
             if ($image = $request->file('imageDes')) {
                 $destPath = 'storage/tours/';
                 $rutaImage = "des" . date('YmdHis') . "." . $image->getClientOriginalExtension();
                 $image->move($destPath, $rutaImage);
-                $tour['imageDes'] = $rutaImage;
+                $input['imageDes'] = $rutaImage;
             } else {
-                unset($tour['imageDes']);
+                unset($input['imageDes']);
             }
+          
         }
-        $tour->update($request->validated());
+        $tour->update($input);
 
 
         return redirect()->route('admin.tours.index')->with('info', 'La ruta ha sido actualizada con éxito');

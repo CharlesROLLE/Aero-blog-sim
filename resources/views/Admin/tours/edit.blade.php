@@ -98,12 +98,12 @@
                         </div>
 
                         <div class="grid col-span-2">
-                            {!! Form::label('imageDep', 'Imagen del Icao departure', ['class' => 'text-xl text-gray-700
+                            {!! Form::label('imageDes', 'Imagen del Icao Arrival', ['class' => 'text-xl text-gray-700
                             rounded-lg p-2 shadow-lg bg-white mb-2']) !!}
     
-                            {!! Form::file('imageDep', ['class' => 'shadow-lg bg-white float-left rounded-lg p-2 shadow-lg
-                            bg-white', 'id' => 'imageDep']) !!}
-                            <p class="text-xl text-gray-700 rounded-lg p-2 shadow-lg bg-white">Escoge la imagen del Icao departure,
+                            {!! Form::file('imageDes', ['class' => 'shadow-lg bg-white float-left rounded-lg p-2 shadow-lg
+                            bg-white', 'id' => 'imageDes']) !!}
+                            <p class="text-xl text-gray-700 rounded-lg p-2 shadow-lg bg-white">Escoge la imagen del Icao Arrival,
                                 puede ser de tipo png, jpeg, jpg de una talla max de 2Mo</p>
                         </div>
 

@@ -9,9 +9,13 @@ use Livewire\WithPagination;
 class Etapa extends Component
 {
     use WithPagination;
+
+    public $readyToLoad = false;
+
+   
     public function render()
     {
-        $tours = tour::paginate(4);
+        $tours = tour::all();
         return view('livewire.etapa', compact('tours'));
     }
 }
