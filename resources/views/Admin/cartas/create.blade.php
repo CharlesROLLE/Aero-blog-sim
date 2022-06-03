@@ -18,6 +18,12 @@
 
                     <div class="grid col-span-2">
 
+                        
+                            {!! Form::label('name', 'Nombre', ['class' => 'text-xl text-gray-700 rounded-lg p-2 mb-2
+                            shadow-lg bg-white']) !!}
+                            {!! form::text('name', null, ['class' => 'rounded-lg shadow-lg bg-white mb-4']) !!}
+    
+
                         {!! Form::label('content', 'Contenido', ['class' => 'text-xl text-gray-700
                         rounded-lg p-2 shadow-lg bg-white mb-2']) !!}
 
