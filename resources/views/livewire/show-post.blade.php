@@ -6,7 +6,7 @@
             <div x-data="{show: false}" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div class="lg:col-span-2 shadow-xl">
                     <figure>
-                        <img class="w-full h-80 object-cover object-center" src="/storage/posts/{{ $post->image }}">
+                        <img class="w-full h-full object-cover object-center" src="/storage/posts/{{ $post->image }}">
                     </figure>
                     <div class="text-base text-gray-500 mt-4 px-2 mb-2">
                         {!! $post->body !!}

@@ -130,7 +130,12 @@
 
     <script>
         ClassicEditor
-            .create( document.querySelector( '#body' ) )
+
+        CKEDITOR.plugins.addExternal( 'youtube', '/youtube/', 'plugin.js');
+
+            .create( document.querySelector( '#body', , {
+                extraPlugins: 'youtube'
+                }  ) )
             .catch( error => {
                 console.error( error );
             } );
